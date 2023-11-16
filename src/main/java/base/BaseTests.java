@@ -18,6 +18,7 @@ public class BaseTests {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments( "--enable-automation");
         chromeOptions.addArguments("start-maximized");
+        chromeOptions.addArguments("--headless");
         webDriver = new ChromeDriver(chromeOptions);
         Properties properties = new Properties();
         properties.load(new FileInputStream(Paths.CLS_FARMING_PROPERTIES));
