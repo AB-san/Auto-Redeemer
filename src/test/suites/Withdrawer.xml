@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Withdrawer">
+    <test name="Withdraw">
+        <classes>
+            <class name="clsFarming.WithdrawerTest">
+            </class>
+        </classes>
+    </test>
+</suite>

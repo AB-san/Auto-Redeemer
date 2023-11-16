@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Redeemer">
+    <test name="Redeem">
+        <classes>
+            <class name="clsFarming.RedeemerTest">
+            </class>
+        </classes>
+    </test>
+</suite>
