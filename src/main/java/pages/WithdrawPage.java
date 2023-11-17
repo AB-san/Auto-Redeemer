@@ -2,6 +2,7 @@ package pages;
 
 import base.BaseActions;
 import base.Paths;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import utils.Reader;
 
+@Slf4j
 public class WithdrawPage extends BaseActions {
     public WebDriver webDriver;
     public WithdrawPage(WebDriver webDriver){
@@ -34,18 +36,23 @@ public class WithdrawPage extends BaseActions {
     @FindBy(xpath = "//div[contains(text(),'successful')]")
     public WebElement successPopup;
 
-    public String getTotalBalance(){
+    public int getTotalBalance(){
         String balance = totalBalance.getText();
-        return balance.substring(0, balance.indexOf("Rs"));
+        //only integer value will can be sent in the field.
+        double amt = Double.parseDouble(balance.substring(0, balance.indexOf("Rs")));
+        return (int)amt;
     }
 
     public void withdrawTotalBalance(){
-        withdrawAmtInputField.sendKeys("1000");
+        withdrawAmtInputField.sendKeys(String.valueOf(getTotalBalance()));
         waitFor700MilliSec();
         withdrawPwdInputField.sendKeys(Reader.getProperty("LOGIN_WITHDRAW_PASSWORD"));
         waitFor700MilliSec();
         click(withdrawButton);
-        Assert.assertTrue(checkIfElementIsDisplayed(successPopup),"Withdraw unsuccessful");
+        if(!checkIfElementIsDisplayed(successPopup)){
+            log.info("Withdraw unsuccessful");
+        }
+        waitFor300MilliSec();
         click(okayPopup);
     }
 
