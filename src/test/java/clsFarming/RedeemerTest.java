@@ -4,10 +4,10 @@ import base.BaseTests;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.LoginPage;
-import pages.MyAccountPage;
-import pages.MyProductsPage;
-import pages.WelcomePage;
+import pages.ClsFarming.LoginPage;
+import pages.ClsFarming.MyAccountPage;
+import pages.ClsFarming.MyProductsPage;
+import pages.ClsFarming.WelcomePage;
 
 @Slf4j
 public class RedeemerTest extends BaseTests {

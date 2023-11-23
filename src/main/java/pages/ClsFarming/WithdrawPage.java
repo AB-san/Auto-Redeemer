@@ -1,13 +1,11 @@
-package pages;
+package pages.ClsFarming;
 
 import base.BaseActions;
-import base.Paths;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import utils.Reader;
 
 @Slf4j
@@ -46,7 +44,7 @@ public class WithdrawPage extends BaseActions {
     public void withdrawTotalBalance(){
         withdrawAmtInputField.sendKeys(String.valueOf(getTotalBalance()));
         waitFor700MilliSec();
-        withdrawPwdInputField.sendKeys(Reader.getProperty("LOGIN_WITHDRAW_PASSWORD"));
+        withdrawPwdInputField.sendKeys(Reader.getProperty("WITHDRAW_CLS_PASSWORD"));
         waitFor700MilliSec();
         click(withdrawButton);
         if(!checkIfElementIsDisplayed(successPopup)){

@@ -1,4 +1,4 @@
-package pages;
+package pages.ClsFarming;
 
 import base.BaseActions;
 import org.openqa.selenium.WebDriver;

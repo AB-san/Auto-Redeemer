@@ -1,4 +1,4 @@
-package pages;
+package pages.ClsFarming;
 import lombok.extern.slf4j.Slf4j;
 import base.BaseActions;
 import org.openqa.selenium.WebDriver;
@@ -32,8 +32,8 @@ public class LoginPage extends BaseActions {
     public WebElement okayPopup;
 
     public void loginAction(){
-        userNameInputField.sendKeys(Reader.getProperty("LOGIN_USER_ID"));
-        passwordInputField.sendKeys(Reader.getProperty("LOGIN_PASSWORD"));
+        userNameInputField.sendKeys(Reader.getProperty("LOGIN_CLS_USER_ID"));
+        passwordInputField.sendKeys(Reader.getProperty("LOGIN_CLS_PASSWORD"));
         click(loginButton);
         waitFor300MilliSec();
         Assert.assertTrue(checkIfElementIsDisplayed(successPopup),"Log in unsuccessful");

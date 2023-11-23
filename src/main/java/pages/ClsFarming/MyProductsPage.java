@@ -1,4 +1,4 @@
-package pages;
+package pages.ClsFarming;
 
 import base.BaseActions;
 import lombok.extern.slf4j.Slf4j;

@@ -3,7 +3,7 @@ package clsFarming;
 import base.BaseTests;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.*;
+import pages.ClsFarming.*;
 
 public class WithdrawerTest extends BaseTests {
     LoginPage loginPage;
